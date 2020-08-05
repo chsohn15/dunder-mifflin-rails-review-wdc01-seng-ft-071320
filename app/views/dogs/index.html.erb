@@ -2,5 +2,7 @@
 <ul>
     <% @dogs.each do |dog| %>
         <li><%= link_to dog.name, dog_path(dog) %></li>
+        <h5>Number of Employees:<%=dog.employee_count%><h5>
     <% end %>
 </ul>
+

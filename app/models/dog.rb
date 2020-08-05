@@ -10,6 +10,17 @@ class Dog < ApplicationRecord
         employee_names.join(", ")
     end
 
+    def employee_count
+        all_employees = Employee.where(dog_id: self.id)
+        all_employees.count
+    end
+
+    #Sort dogs by employee_count
+    def self.sorted_dogs_by_employee_count
+        Dog.order(:employee_count)
+    end
+
+
     def self.dog_names
         Dog.all.map do |dog|
             dog.name 
