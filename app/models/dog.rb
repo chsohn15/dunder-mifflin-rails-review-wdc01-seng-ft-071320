@@ -9,4 +9,15 @@ class Dog < ApplicationRecord
         end
         employee_names.join(", ")
     end
+
+    def self.dog_names
+        Dog.all.map do |dog|
+            dog.name 
+        end
+    end
+
+    def self.find_dog_id(name)
+        dog = Dog.find_by(name: name)
+        dog.id
+    end
 end
